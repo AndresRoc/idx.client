@@ -1,0 +1,504 @@
+$font-stack: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-base-size: 14px;
+
+$font-size-small: 80%;
+$font-size-medium: 90%;
+$font-size-large: 100%;
+$font-size-xlarge: 110%;
+$font-size-xxlarge: 140%;
+
+$label-spacing: 2px;
+
+$screen-width-tablet: 768px;
+$screen-width-mobile: 560px;
+
+body {
+  font: $font-base-size $font-stack;
+}
+
+#main-content {
+  padding:0;
+}
+
+.thumb {
+  img {
+    width: auto;
+    height: 100px;
+  }
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+@mixin relative-inline-block {
+  position: relative;
+  display: inline-block;
+}
+
+@mixin label {
+  @include relative-inline-block;
+  font-weight: bold;
+  font-size: $font-size-medium;
+  margin: 0 $label-spacing;
+}
+
+@mixin label-value {
+  @include relative-inline-block;
+  font-size: $font-size-medium;
+  margin: 0 $label-spacing;
+}
+
+@mixin summary-details {
+
+  font-size: $font-size-medium;
+
+  table {
+    margin: 5px 0;
+  }
+  th, td {
+    padding-right: 10px;
+    text-align: center;
+  }
+}
+
+.search-results {
+
+  margin:0;
+  height:600px;
+
+  overflow-y: scroll;
+}
+
+.nav-pills {
+  margin:10px;
+}
+
+.tab-content {
+  border-left:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  border-right:1px solid #ddd;
+}
+
+.open-house {
+  padding:1px 0 1px 4px;
+  margin:2px 2px 2px 0;
+}
+
+.listings-error {
+  padding:10px;
+
+  .request-listings-link {
+    margin-top:8px;
+  }
+}
+
+//listing-summary
+.listing-summary {
+  margin: 10px;
+  padding: 5px;
+  border: solid cornflowerblue 1px;
+
+  h3 {
+    margin:0;
+  }
+
+  .price {
+    margin-top: 5px;
+  }
+
+  .summary-details {
+    @include summary-details;
+  }
+}
+
+.slick-prev:before, .slick-next:before {
+  color: gray;
+}
+
+.listing-detail {
+
+  border: solid 1px #ccc;
+
+  margin: 25px 25px 25px 10px;
+  padding:15px;
+
+  height:800px;
+  overflow-y: scroll;
+
+  #public-remarks {
+    margin: 5px;
+  }
+
+  #listing-google-map {
+    margin-top:10px;
+
+    iframe {
+      width: 550px;
+      height: 450px;
+      border: 0;
+    }
+  }
+
+  address {
+    font-size: $font-size-xlarge;
+    h2 {
+      margin:2px;
+    }
+  }
+
+  .listing-field {
+    font-size: $font-size-medium;
+
+    .status-active {
+      color: green;
+    }
+
+    .status-active-continue-to-show {
+      color: blue;
+    }
+  }
+
+  .summary-details {
+    @include summary-details;
+    font-size: $font-size-xlarge;
+
+    td {
+      color: #777;
+    }
+  }
+
+  #price {
+    h2 {
+      margin:2px;
+    }
+  }
+
+  #loading {
+    @include relative-inline-block;
+    position: absolute;
+    top:50%;
+    left:30%;
+
+    .loading-text {
+      font-size:$font-size-medium;
+      margin-left:5px;
+    }
+  }
+
+  .image-carousel-for {
+
+    margin:0 0 15px 0;
+
+    .image-container-for {
+      margin:0;
+      width:296px;
+      height:222px;
+
+      img:focus {
+        outline: none;
+      }
+
+      img {
+        width:296px;
+        height: 222px;
+      }
+    }
+  }
+
+  .image-container-for:focus {
+    outline: none;
+  }
+
+  .image-carousel-nav {
+
+    width: 500px;
+    margin:0 0 25px 25px;
+
+    @media(max-width: $screen-width-mobile)  {
+      width: auto;
+      margin:0 0 25px 0;
+    }
+  }
+
+  .image-container-nav {
+    padding: 5px;
+    margin: 0;
+
+    img {
+      width:auto;
+      @media screen and (max-width: 560px) {
+        width:110px;
+      }
+      height:100px;
+    }
+  }
+
+  .image-container-nav:focus {
+    outline: none;
+  }
+
+  #public-remarks {
+    margin-top: 15px;
+  }
+
+  #detail-fields {
+    .listing-field {
+      font-size: $font-size-medium;
+      margin:5px;
+    }
+  }
+
+  #listed-with {
+    margin: 15px;
+    text-align: center;
+
+  }
+
+  .modal-button {
+    outline: none;
+  }
+
+  .large-photos-button {
+    margin-bottom:10px;
+  }
+
+  //do not display large photo button and links on screen widths less than 560px
+  @media screen and (max-width: 560px) {
+    .large-photos-button {
+      display: none;
+    }
+
+    .large-photo-link {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
+
+.listing-detail.mobile {
+  border:none;
+  margin:0;
+  height: 100%;
+}
+
+#photosModal {
+
+  .listing-modal-slider {
+    .modal-slider-container {
+      max-height: 650px;
+    }
+    background: none;
+  }
+
+  .item img {
+    margin:auto;
+  }
+
+  .carousel-control.right,
+  .carousel-control.left {
+     background: none;
+   }
+
+  .carousel-control {
+    color: #337ab7;
+  }
+}
+
+.listing-carousel {
+  .item img {
+    margin:auto;
+  }
+
+  .carousel-control.right,
+  .carousel-control.left {
+    background: none;
+    font-size:2.0em;
+  }
+}
+
+.location-search-container {
+
+  input.location-search {
+    margin: 4px 4px;
+    width:300px;
+  }
+
+  .search-term-suggestions {
+    margin:8px;
+    font-size: $font-size-small;
+
+    div {
+      display: inline-block;
+      margin:4px 4px 4px 0;
+    }
+
+    .location-search-term-item {
+      display: inline-block;
+      padding:4px;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+
+      .glyphicon-remove-circle {
+        top:2px;
+        cursor:pointer;
+        color: #337ab7;
+      }
+
+      .glyphicon-remove-circle:hover {
+        color: #23527c;
+      }
+    }
+  }
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  margin: 12px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+#sort-drop-down-menu button {
+  margin: 4px;
+}
+
+#search-criteria {
+
+  padding:8px;
+
+  #search-criteria-accordion {
+
+    .input-sub-label {
+      margin: 0 4px 0 4px;
+    }
+
+    .btn-submit {
+      margin-top:10px;
+    }
+
+    .range-preview {
+      font-size: $font-size-small;
+      color:#aaaaaa;
+    }
+  }
+}
+
+.sync-stat {
+  font-size: $font-size-medium;
+  padding:15px;
+}
+
+
+.listing-preview {
+  border: solid 1px;
+  max-width:233px;
+  height:264px;
+  padding:5px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b9d3f1+0,ddedf9+100&1+0,0+18 */
+  background: -moz-linear-gradient(top,  rgba(185,211,241,1) 0%, rgba(191,216,242,0) 18%, rgba(221,237,249,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(185,211,241,1) 0%,rgba(191,216,242,0) 18%,rgba(221,237,249,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(185,211,241,1) 0%,rgba(191,216,242,0) 18%,rgba(221,237,249,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d3f1', endColorstr='#00ddedf9',GradientType=0 ); /* IE6-9 */
+
+  .controls {
+    margin-top: 4px;
+
+    .right {
+      float:right;
+    }
+
+  }
+
+  .listings-slide-show {
+    height:230px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+
+    .item {
+      margin:8px;
+    }
+
+    .price {
+      font-size: $font-size-large;
+      color: maroon;
+    }
+
+    .listing-info {
+      font-size: $font-size-medium;
+    }
+
+    .photo {
+      margin-top:8px;
+
+      img {
+        width: 96px;
+        height: 96px;
+      }
+    }
+  }
+}
+
+@media print {
+
+  .listing-detail {
+    margin:0;
+    overflow: visible;
+    border: none;
+  }
+
+  #listing-google-map {
+    display:none;
+  }
+
+  #listed-with {
+    margin:0;
+    padding:0;
+  }
+
+}
+
+
+
+
+

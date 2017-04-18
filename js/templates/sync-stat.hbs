@@ -1,0 +1,16 @@
+<div class="sync-stat">
+    <div>Based on information from the Multiple Listing Service of HiCentral MLS, Ltd.</div>
+    <div>
+        Listings last updated on
+        {{#format-date syncEndTime 'MM/DD/YYYY h:mm a z'}}
+            {{formattedDate}}
+        {{/format-date}}
+    </div>
+    <div>Information is deemed reliable but not guaranteed.</div>
+    <div>
+        Copyright:
+        {{#current-year}}
+            {{yearValue}}
+        {{/current-year}}
+        by HiCentral MLS, Ltd.</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="loading no-print">
+    <img src="bower_components/slick-carousel/slick/ajax-loader.gif"/>
+    <span class="loading-text">
+        Loading Images ...
+    </span>
+</div>
+<div id="listing-carousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        {{#each photoList as |photo|}}
+            <div class="item">
+                <img id="{{photo.mlsNumber}}_{{photo.photoIndex}}" src="{{#photos-url photo.mlsNumber photo.photoIndex 'large'}}{{url}}{{/photos-url}}"/>
+            </div>
+        {{/each}}
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#listing-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#listing-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

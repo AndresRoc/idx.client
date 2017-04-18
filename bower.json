@@ -1,0 +1,38 @@
+{
+  "name": "idx-client",
+  "description": "Oahu MLS Search",
+  "main": "app.js",
+  "authors": [
+    "Steve Bruno <stevenrbruno@icloud.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.3",
+    "bootstrap": "~3.3.5",
+    "handlebars": "~4.0.5",
+    "requirejs": "~2.2.0",
+    "text": "~2.0.14",
+    "accounting": "~0.3.2",
+    "slick-carousel": "~1.5.9",
+    "imagesloaded": "~3.2.0",
+    "font-awesome": "~4.4.0",
+    "infinity": "*",
+    "requirejs-plugins": "~1.0.3",
+    "moment": "~2.11.2",
+    "moment-timezone": "~0.5.0",
+    "jQuery.print": "~1.4.0",
+    "clipboard": "~1.5.8",
+    "mobile-detect": "~1.3.2"
+  }
+}

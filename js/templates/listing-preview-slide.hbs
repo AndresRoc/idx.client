@@ -1,0 +1,60 @@
+{{#each listings as |listing|}}
+    <div id="listing-slide-{{listing.mlsNumber}}" class="item">
+        <div class="price">
+            <strong>
+                {{#format-currency listing.listPrice}}
+                    {{formattedCurrency}}
+                {{/format-currency}}
+            </strong>
+        </div>
+        {{#if listing.city}}
+            <div>
+                <small>
+                    {{fullStreetAddress}}
+                </small>
+            </div>
+            <div>
+                <small>
+                    {{listing.city}}, {{listing.postalCode}}
+                </small>
+            </div>
+        {{/if}}
+        <div>
+            {{#if listing.bedsTotal}}
+                <small>
+                    Beds: {{listing.bedsTotal}}
+                </small>
+            {{/if}}
+            {{#if listing.bathsFull}}
+                <small>
+                    Baths Full: {{listing.bathsFull}}
+                </small>
+            {{/if}}
+            {{#if listing.bathsHalf}}
+                <small>
+                    Half: {{listing.bathsHalf}}
+                </small>
+            {{/if}}
+        </div>
+        <div>
+            {{#if listing.sqftTotal}}
+                <small>
+                    Sqft: {{listing.sqftTotal}}
+                </small>
+            {{/if}}
+            {{#if listing.lotSizeArea}}
+                <small>
+                    Lot Size: {{listing.lotSizeArea}}
+                </small>
+            {{/if}}
+        </div>
+        <div class="photo">
+            {{#if listing.hasPhotos}}
+                <img id="{{listing.mlsNumber}}_0"
+                     src="{{#photos-url listing.mlsNumber  1 'small'}}{{url}}{{/photos-url}}"/>
+            {{else}}
+                <img id="{{listing.mlsNumber}}_0" src="img/no-photo.jpg"/>
+            {{/if}}
+        </div>
+    </div>
+{{/each}}

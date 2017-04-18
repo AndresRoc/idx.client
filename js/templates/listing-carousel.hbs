@@ -1,0 +1,28 @@
+<div class="loading no-print">
+    <img src="bower_components/slick-carousel/slick/ajax-loader.gif"/>
+    <span class="loading-text">
+        Loading Images ...
+    </span>
+</div>
+<div class="image-carousel-for hidden">
+    {{#each photoList as |photo|}}
+    <div class="image-container-for">
+        <a class="modal-button large-photo-link" href="#" data-toggle="modal" data-target="#photosModal">
+            <img id="{{photo.mlsNumber}}_{{photo.photoIndex}}" src="{{#photos-url photo.mlsNumber photo.photoIndex 'large'}}{{url}}{{/photos-url}}"/>
+        </a>
+    </div>
+    {{/each}}
+</div>
+<div class="large-photos-button no-print">
+    <button type="button" class="modal-button btn btn-default btn-sm" data-toggle="modal" data-target="#photosModal">
+        View Large Photos
+    </button>
+</div>
+
+<div class="image-carousel-nav hidden no-print">
+    {{#each photoList as |photo|}}
+    <div class="image-container-nav">
+        <img id="{{photo.mlsNumber}}_{{photo.photoIndex}}" src="{{#photos-url photo.mlsNumber photo.photoIndex 'small'}}{{url}}{{/photos-url}}"/>
+    </div>
+    {{/each}}
+</div>

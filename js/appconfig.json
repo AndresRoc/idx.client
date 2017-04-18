@@ -1,0 +1,6 @@
+{
+  "idxServiceUrl": "<idx_service_url>",
+  "serviceTimezone": "HST",
+  "googleMapsApiKey": "<google_maps_api_key>",
+  "listingDirectUrlBase": "<host_site_url>"
+}

@@ -1,0 +1,229 @@
+<div id="search-criteria">
+    <div id="search-criteria-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingPrice">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapsePrice" aria-expanded="true" aria-controls="collapsePrice">
+                        Price
+                    </a>
+                    <span class="caret"></span>
+                    <span class="range-preview">
+                        <span class="range-gte hidden">&gt;=</span>
+                        <span class="range-min"></span>
+                        <span class="range-dash hidden">-</span>
+                        <span class="range-lte hidden">&lt;=</span>
+                        <span class="range-max"></span>
+                    </span>
+                </h4>
+            </div>
+            <div id="collapsePrice" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingPrice">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-large" id="price-min" placeholder="Min">
+                            <span class="input-sub-label">to</span>
+                            <input type="text" class="form-control input-large" id="price-max" placeholder="Max">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingBedBath">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapseBedBath" aria-expanded="false" aria-controls="collapseBedBath">
+                        Beds & Baths
+                    </a>
+                    <span class="caret"></span>
+                    <span class="range-preview">
+                        <span class="beds-amt"></span>
+                        <span class="baths-amt"></span>
+                    </span>
+                </h4>
+            </div>
+            <div id="collapseBedBath" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBedBath">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div class="form-group">
+                            <input type="number" class="form-control input-small" id="beds-amt" min="0" max="99">
+                            <span class="input-sub-label">+ beds</span>
+                            <input type="number" class="form-control input-small" id="baths-amt" min="0" max="99">
+                            <span class="input-sub-label">+ baths</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingHomeSize">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapseHomeSize" aria-expanded="false" aria-controls="collapseHomeSize">
+                        Home Size
+                    </a>
+                    <span class="caret"></span>
+                    <span class="range-preview">
+                        <span class="range-gte hidden">&gt;=</span>
+                        <span class="range-min"></span>
+                        <span class="range-dash hidden">-</span>
+                        <span class="range-lte hidden">&lt;=</span>
+                        <span class="range-max"></span>
+                    </span>
+                </h4>
+            </div>
+            <div id="collapseHomeSize" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingHomeSize">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="sqft-min" placeholder="Min" min="0" max="99999">
+                            <span class="input-sub-label">to</span>
+                            <input type="number" class="form-control" id="sqft-max" placeholder="Max" min="0" max="99999">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingParking">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapseParking" aria-expanded="false" aria-controls="collapseParking">
+                        Parking
+                    </a>
+                    <span class="caret"></span>
+                    <span class="range-preview">
+                        <span class="parking-amt"></span>
+                    </span>
+                </h4>
+            </div>
+            <div id="collapseParking" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingParking">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div class="form-group">
+                            <input type="number" class="form-control input-small" id="parking-amt" min="0" max="99">
+                            <span class="input-sub-label">+ parking</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingYearBuilt">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapseYearBuilt" aria-expanded="false" aria-controls="collapseYearBuilt">
+                        Year Built
+                    </a>
+                    <span class="caret"></span>
+                    <span class="range-preview">
+                        <span class="range-gte hidden">&gt;=</span>
+                        <span class="range-min"></span>
+                        <span class="range-dash hidden">-</span>
+                        <span class="range-lte hidden">&lt;=</span>
+                        <span class="range-max"></span>
+                    </span>
+                </h4>
+            </div>
+            <div id="collapseYearBuilt" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingYearBuilt">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="year-built-min" placeholder="Min" min="0" max="9999">
+                            <span class="input-sub-label">to</span>
+                            <input type="number" class="form-control" id="year-built-max" placeholder="Max" min="0" max="9999">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingPhotos">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapsePhotos" aria-expanded="false" aria-controls="collapsePhotos">
+                        Photos
+                        <span class="caret"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapsePhotos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPhotos">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div id="photosCheckbox" class="form-group">
+                            <input id="has-photos-checkbox" type="checkbox" name="hasPhotos" value="hasPhotos"> Only display listings with photos<br/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFeatures">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapseFeatures" aria-expanded="false" aria-controls="collapseFeatures">
+                        Features
+                        <span class="caret"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeatures" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFeatures">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div id="featuresCheckbox" class="form-group">
+                            <input id="feature-golf-course-checkbox" type="checkbox" name="features" value="golfcourse"> Golf Course<br/>
+                            <input id="feature-hardwood-floors-checkbox" type="checkbox" name="features" value="hardwood-floors"> Hardwood Floors<br/>
+                            <input id="feature-land-tenure-fee-simple-checkbox" type="checkbox" name="features" value="land-tenure-feesimple"> Land Tenure - Fee Simple<br/>
+                            <input id="feature-land-tenure-leasehold-checkbox" type="checkbox" name="features" value="land-tenure-leasehold"> Land Tenure - Leasehold<br/>
+                            <input id="feature-pool-checkbox" type="checkbox" name="features" value="pool"> Pool<br/>
+                            <input id="feature-view-all-checkbox" type="checkbox" name="features" value="view-all"> View - All<br/>
+                            <input id="feature-view-mountain-checkbox" type="checkbox" name="features" value="view-mountain"> View - Mountain<br/>
+                            <input id="feature-view-ocean-checkbox" type="checkbox" name="features" value="view-ocean"> View - Ocean<br/>
+                            <input id="feature-waterfront-checkbox" type="checkbox" name="features" value="waterfront"> Waterfront<br/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOpenHouse">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#search-criteria-accordion" href="#collapseOpenHouse" aria-expanded="false" aria-controls="collapseOpenHouse">
+                        Open House
+                        <span class="caret"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOpenHouse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOpenHouse">
+                <div class="panel-body">
+                    <form class="form-inline search-criteria">
+                        <div id="openHouseRadio" class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="openHouseRadio" value="none" checked>
+                                    None
+                                </label>
+                            </div>
+                            <br/>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="openHouseRadio" value="thisWeekend">
+                                    This Weekend
+                                </label>
+                            </div>
+                            <br/>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="openHouseRadio" value="nextWeekend">
+                                    Next Weekend
+                                </label>
+                            </div>
+                            <br/>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="openHouseRadio" value="30Days">
+                                    + 30 days
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="btn-back-to-results" type="button" class="btn btn-primary">Back to Results</button>
+</div>

@@ -1,0 +1,341 @@
+<div id="listing-detail-{{mlsNumber}}" class="listing-detail">
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <div class="no-print">
+                <span>
+                    <a class="copy-listing-link" href="#" data-clipboard-text="{{directLinkUrl}}">
+                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                    Copy Direct Link
+                </a>
+                </span>
+                <span>|</span>
+                <span>
+                    <a class="listing-print" href="#">
+                        <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+                        Print Listing
+                    </a>
+                </span>
+            </div>
+            <address>
+                <h3>
+                    {{fullStreetAddress}}
+                    <div>
+                        <small>
+                            {{city}}, {{stateOrProvince}} {{postalCode}}
+                        </small>
+                    </div>
+                </h3>
+            </address>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+            <div id="price">
+                <h3>
+                    {{#format-currency listPrice}}
+                        {{formattedCurrency}}
+                    {{/format-currency}}
+                </h3>
+            </div>
+            <div class="listing-field">
+                <strong>MLS #: </strong>{{mlsNumber}}
+            </div>
+            {{#if status}}
+                <div class="listing-field">
+                    <strong>Status: </strong><span id="status-display">{{status}}</span>
+                </div>
+            {{/if}}
+            {{#if virtualTourUrlUnbranded}}
+                <div class="listing-field no-print">
+                    <strong>
+                        <a href="{{virtualTourUrlUnbranded}}" target="_blank">Virtual Tour</a>
+                    </strong>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-8">
+            <div class="summary-details">
+                <table>
+                    <thead>
+                    <th>BED</th>
+                    <th>BATH</th>
+                    <th>PARKING</th>
+                    <th>SQFT</th>
+                    {{#if lotSizeArea}}
+                        <th>LOT SIZE</th>
+                    {{/if}}
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{bedsTotal}}</td>
+                        <td>{{bathsFull}}</td>
+                        <td>{{parkingTotal}}</td>
+                        <td>{{sqftTotal}}</td>
+                        {{#if lotSizeArea}}
+                            <td>{{lotSizeArea}}</td>
+                        {{/if}}
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{#if openHouseList}}
+        <div class="bg-info open-house no-print">
+            <bold>Open House</bold>
+            <div>
+                {{#each openHouseList}}
+                    <small>
+                        {{#format-open-house-datetime this}}
+                            {{formattedDate}}
+                        {{/format-open-house-datetime}}
+                    </small>
+                    <br/>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 listing-carousel"></div>
+    </div>
+    <div>
+        <h3>Details</h3>
+        <hr/>
+    </div>
+    {{#if publicRemarks}}
+        <div id="public-remarks">
+            {{publicRemarks}}
+        </div>
+    {{/if}}
+    <div id="detail-fields" class="row">
+        <div class="col-xs-6 col-sm-4">
+            {{#if yearBuilt}}
+                <div class="listing-field">
+                    <strong>Year Built: </strong> {{yearBuilt}}
+                </div>
+            {{/if}}
+
+            {{#if matrixModifiedDate}}
+                <div class="listing-field">
+                    <strong>Last Updated: </strong>
+                    {{#format-date matrixModifiedDate 'MM/DD/YY h:mm a'}}
+                        {{formattedDate}}
+                    {{/format-date}}
+                </div>
+            {{/if}}
+
+            {{#if neighbourhood}}
+                <div class="listing-field">
+                    <strong>Neighborhood: </strong> {{neighbourhood}}
+                </div>
+            {{/if}}
+
+            {{#if maintenanceExpense}}
+                <div class="listing-field">
+                    <strong>Association Fee: </strong>
+                    {{#format-currency maintenanceExpense}}
+                        {{formattedCurrency}}
+                    {{/format-currency}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="col-xs-6 col-sm-4">
+            {{#if listingContractDate}}
+                <div class="listing-field">
+                    <strong>Days on Market:</strong>
+                    {{daysOnMarket}}
+                </div>
+            {{/if}}
+
+            {{#if propertyType}}
+                <div class="listing-field">
+                    <strong>Property Type: </strong>
+                    {{#property-type propertyType}}
+                        {{propertyType}}
+                    {{/property-type}}
+                </div>
+            {{/if}}
+
+            {{#if buildingName}}
+                <div class="listing-field">
+                    <strong>Community: </strong> {{buildingName}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    {{#schools this}}
+        {{#if hasSchools}}
+            <h3>Schools</h3>
+            <hr/>
+            <div id="detail-fields" class="row">
+                <div class="col-xs-6 col-sm-4">
+                    {{#if elementarySchool}}
+                        <div class="listing-field">
+                            <strong>Elementary School: </strong> {{elementarySchool}}
+                        </div>
+                    {{/if}}
+                    {{#if middleOrJuniorSchool}}
+                        <div class="listing-field">
+                            <strong>Middle School: </strong> {{middleOrJuniorSchool}}
+                        </div>
+                    {{/if}}
+                    {{#if highSchool}}
+                        <div class="listing-field">
+                            <strong>High School: </strong> {{highSchool}}
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+    {{/schools}}
+    <h3>Additional Details</h3>
+    <hr/>
+    <div id="detail-fields" class="row">
+        <div class="col-xs-6 col-sm-4">
+            {{#if amenities}}
+                <div class="listing-field">
+                    <strong>Amenities: </strong> {{amenities}}
+                </div>
+            {{/if}}
+            {{#if easements}}
+                <div class="listing-field">
+                    <strong>Easements: </strong> {{easements}}
+                </div>
+            {{/if}}
+            {{#if furnished}}
+                <div class="listing-field">
+                    <strong>Furnished: </strong> {{furnished}}
+                </div>
+            {{/if}}
+            {{#if landTenure}}
+                <div class="listing-field">
+                    <strong>Land Tenure: </strong> {{landTenure}}
+                </div>
+            {{/if}}
+            {{#if parkingFeatures}}
+                <div class="listing-field">
+                    <strong>Parking Features: </strong> {{parkingFeatures}}
+                </div>
+            {{/if}}
+            {{#if propertyCondition}}
+                <div class="listing-field">
+                    <strong>Property Condition: </strong> {{propertyCondition}}
+                </div>
+            {{/if}}
+            {{#if propertySubType}}
+                <div class="listing-field">
+                    <strong>Property Sub Type: </strong> {{propertySubType}}
+                </div>
+            {{/if}}
+            {{#if topography}}
+                <div class="listing-field">
+                    <strong>Topography: </strong> {{topography}}
+                </div>
+            {{/if}}
+            {{#if view}}
+                <div class="listing-field">
+                    <strong>View: </strong> {{view}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="col-xs-6 col-sm-4">
+            {{#if architecturalStyle}}
+                <div class="listing-field">
+                    <strong>Architectural Style: </strong> {{architecturalStyle}}
+                </div>
+            {{/if}}
+            {{#if associationFee2Includes}}
+                <div class="listing-field">
+                    <strong>Association Fee Includes: </strong> {{associationFee2Includes}}
+                </div>
+            {{/if}}
+            {{#if constructionMaterials}}
+                <div class="listing-field">
+                    <strong>Construction Materials: </strong> {{constructionMaterials}}
+                </div>
+            {{/if}}
+            {{#if flooring}}
+                <div class="listing-field">
+                    <strong>Flooring: </strong> {{flooring}}
+                </div>
+            {{/if}}
+            {{#if inclusions}}
+                <div class="listing-field">
+                    <strong>Inclusions: </strong> {{inclusions}}
+                </div>
+            {{/if}}
+            {{#if lotFeatures}}
+                <div class="listing-field">
+                    <strong>Lot Features: </strong> {{lotFeatures}}
+                </div>
+            {{/if}}
+            {{#if poolFeatures}}
+                <div class="listing-field">
+                    <strong>Pool Features: </strong> {{poolFeatures}}
+                </div>
+            {{/if}}
+            {{#if propertyFrontage}}
+                <div class="listing-field">
+                    <strong>Property Frontage: </strong> {{propertyFrontage}}
+                </div>
+            {{/if}}
+            {{#if storiesType}}
+                <div class="listing-field">
+                    <strong>Story Type: </strong> {{storiesType}}
+                </div>
+            {{/if}}
+            {{#if utilities}}
+                <div class="listing-field">
+                    <strong>Utilities: </strong> {{utilities}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    <div id="listing-google-map">
+        <iframe
+                frameborder="0" src="https://www.google.com/maps/embed/v1/place?key={{googleMapsApiKey}}&q={{googleMapsEmbedQuery}}" allowfullscreen>
+        </iframe>
+    </div>
+    <div id="listed-with">
+        Listed with {{listOfficeName}}
+    </div>
+</div>
+
+<!-- Photos Modal -->
+<div class="modal fade" id="photosModal" tabindex="-1" role="dialog" aria-labelledby="Listing Photos">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="photosModalLabel">
+                    {{fullAddress}}
+                    <div>
+                        <small>
+                            {{city}}, {{stateOrProvince}} {{postalCode}}
+                        </small>
+                    </div>
+                </h4>
+                <h5>
+                    {{#format-currency listPrice}}
+                        {{formattedCurrency}}
+                    {{/format-currency}}
+
+                    <span>Bed: {{bedsTotal}}, Bath: {{bathsFull}}, Parking: {{parkingTotal}}, Sqft: {{sqftTotal}}</span>
+                </h5>
+
+            </div>
+            <div class="modal-body">
+                <div class="listing-modal-slider"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="listings-error bg-danger hidden">
+    <div>
+        An error occurred during listing retrieval.
+    </div>
+    <div class="request-listings-link">
+        <a href="#">Try request again.</a>
+    </div>
+</div>

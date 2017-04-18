@@ -1,0 +1,83 @@
+{{#each listings as |listing|}}
+
+    <div id="listing-summary-{{listing.mlsNumber}}" class="listing-summary">
+        <h3>
+            <a class="listing-link" href="#index?mlsNumber={{listing.mlsNumber}}">
+                {{fullStreetAddress}}
+            </a>
+
+            <div>
+                <small>
+                    {{listing.city}}
+                </small>
+            </div>
+        </h3>
+        <div class="price">
+            <strong>
+                {{#format-currency listing.listPrice}}
+                    {{formattedCurrency}}
+                {{/format-currency}}
+            </strong>
+        </div>
+
+        <div class="thumb">
+            <a class="listing-link" href="#index?mlsNumber={{listing.mlsNumber}}">
+                {{#if listing.photoCount}}
+                    <img class="thumb"
+                         src="{{#photos-url listing.mlsNumber 0 'small'}}{{url}}{{/photos-url}}"/>
+                {{else}}
+                    <img id="{{listing.mlsNumber}}_0" src="img/no-photo.jpg"/>
+                {{/if}}
+            </a>
+        </div>
+
+        <div class="summary-details">
+            <table>
+                <thead>
+                <th>BED</th>
+                <th>BATH</th>
+                <th>SQFT</th>
+                <th>TYPE</th>
+                <th>LAND TENURE</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{listing.bedsTotal}}</td>
+                    <td>{{listing.bathsFull}}</td>
+                    <td>{{listing.sqftTotal}}</td>
+                    <td>
+                        {{#property-type listing.propertyType}}
+                            {{propertyType}}
+                        {{/property-type}}
+                    </td>
+                    <td>{{listing.landTenure}}</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        {{#if listing.openHouseList}}
+            <div class="bg-info open-house">
+                <bold>Open House</bold>
+                <div>
+                {{#each listing.openHouseList}}
+                    <small>
+                        {{#format-open-house-datetime this}}
+                            {{formattedDate}}
+                        {{/format-open-house-datetime}}
+                    </small>
+                    <br/>
+                {{/each}}
+                </div>
+            </div>
+        {{/if}}
+    </div>
+{{/each}}
+<div class="listings-error bg-danger hidden">
+    <div>
+        An error occurred during listings retrieval.
+    </div>
+    <div class="request-listings-link">
+        <a href="#">Try request again.</a>
+    </div>
+</div>
