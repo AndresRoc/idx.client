@@ -12,3 +12,8 @@ $ sh bin/build-css
 $ npm install nodemon -g
 $ sh bin/watch-css
 ```
+
+## Start google chrome with file access (single page app dev)
+```text
+$ open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
+```
