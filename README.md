@@ -1,6 +1,8 @@
 # idx-client
 MLS IDX single page browser web application written in backbone.js
 
+Depends on a server running [idx.services](https://github.com/sbruno81/idx.services).
+
 ## Install dev dependencies
 ```text
 $ npm install
